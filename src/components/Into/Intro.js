@@ -1,10 +1,27 @@
 import "./Intro.css";
 
-const Intro = () => (
-  <div className="container">
-    <h3>Hello World</h3>
-  </div>
-);
+const Intro = () => {
+  const students = [
+    "Deepa",
+    "Janki",
+    "Heitinder",
+    "Onkar",
+    "john",
+    "steve",
+    "james",
+    "molly",
+  ];
+  return (
+    <div className="container">
+      <h3>Students</h3>
+      <ul>
+        {students.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default Intro;
 
