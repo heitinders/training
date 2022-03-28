@@ -25,6 +25,7 @@ class StudentContainer extends Component {
         "james",
         "molly",
       ],
+      friends: ["Johan", "Eli", "Mathew", "Chris", "Bruce"],
     };
   }
 
@@ -39,25 +40,26 @@ class StudentContainer extends Component {
     });
   }
 
-  handleDelte(index) {
+  handleDelte = (index) => {
     console.log(index);
     const newStudents = this.state.students;
     newStudents.splice(index, 1);
     this.updateStudents(newStudents);
-  }
+  };
 
   render() {
     return (
       <>
-        <h3>Students</h3>
-        <ul>
-          {this.state.students?.map((item, index) => (
-            <li key={index}>
-              {item} -{" "}
-              <button onClick={() => this.handleDelte(index)}>Delete</button>
-            </li>
-          ))}
-        </ul>
+        <StudentList
+          data={this.state.students}
+          deleteMethod={this.handleDelte}
+        />
+        ;
+        <StudentList
+          data={this.state.friends}
+          deleteMethod={this.handleDelte}
+        />
+        ;
       </>
     );
   }
