@@ -1,4 +1,5 @@
 import { React, Component } from "react";
+import StudentList from "./StudentList";
 /*
     class components are know as stateful components 
     aka smart components 
@@ -37,16 +38,27 @@ class StudentContainer extends Component {
       students: newValue,
     });
   }
+
+  handleDelte(index) {
+    console.log(index);
+    const newStudents = this.state.students;
+    newStudents.splice(index, 1);
+    this.updateStudents(newStudents);
+  }
+
   render() {
     return (
-      <div>
+      <>
         <h3>Students</h3>
         <ul>
-          {this.state.students.map((item, index) => (
-            <li key={index}>{item}</li>
+          {this.state.students?.map((item, index) => (
+            <li key={index}>
+              {item} -{" "}
+              <button onClick={() => this.handleDelte(index)}>Delete</button>
+            </li>
           ))}
         </ul>
-      </div>
+      </>
     );
   }
 }
