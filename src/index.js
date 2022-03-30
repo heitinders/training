@@ -1,14 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
-import Intro from "./components/Into/Intro";
-import StudentContainer from "./components/StudentContainer/StudentContainer";
+import UserContainer from "./components/Users/UserContainer";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <StudentContainer />
+    <UserContainer />
   </React.StrictMode>,
   document.getElementById("root")
 );
