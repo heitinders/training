@@ -11,7 +11,6 @@ import Button from "@mui/material/Button";
 const UserList = (props) => {
   return (
     <>
-      <h3> this change is only for git</h3>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
