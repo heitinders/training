@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import SearchContainer from "./components/Search/SearchContainer";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <SearchContainer />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import StudentContainer from "./components/StudentContainer/StudentContainer";
+import UserContainer from "./components/Users/UserContainer";
+import SearchContainer from "./components/Search/SearchContainer";
+import UserEdit from "./components/Users/UserList";
+import DataList from "./components/DataList/DataList";
+
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Students</Link>
+            </li>
+            <li>
+              <Link to="/search">Search</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+            <li>
+              <Link to="/datalist">Data List</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <Switch>
+        <Route path="/search">
+          <SearchContainer />
+        </Route>
+        <Route path="/users">
+          <UserContainer />
+        </Route>
+        <Route path="/users/:id">
+          <UserEdit />
+        </Route>
+        <Route path="/datalist">
+          <DataList />
+        </Route>
+        <Route path="/">
+          <StudentContainer />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

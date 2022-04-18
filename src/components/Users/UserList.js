@@ -7,6 +7,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const UserList = (props) => {
   return (
@@ -38,7 +39,12 @@ const UserList = (props) => {
                 </TableCell>
                 <TableCell align="right">
                   <Stack direction="row" spacing={2}>
-                    <Button variant="outlined" color="success">
+                    <Button
+                      component={Link}
+                      to={`/users/${item.id}`}
+                      variant="outlined"
+                      color="success"
+                    >
                       EDIT
                     </Button>
                     <Button variant="contained" color="error">
